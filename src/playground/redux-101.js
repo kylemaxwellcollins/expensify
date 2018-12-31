@@ -21,9 +21,12 @@ const resetCount = () => ({
   type: "RESET"
 });
 
-// STORE
+// Reducers
+// 1. Reducers are pure functions
+// 2. Never change state of function
 
-const store = createStore((state = { count: 0 }, action) => {
+
+const countReducer = (state = { count: 0 }, action) => {
   switch (action.type) {
     case "INCREMENT":
       const incrementBy =
@@ -48,7 +51,11 @@ const store = createStore((state = { count: 0 }, action) => {
     default:
       return state;
   }
-});
+};
+
+// STORE
+
+const store = createStore(countReducer);
 
 // DISPATCH
 
