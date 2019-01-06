@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import moment from "moment";
 import { SingleDatePicker } from "react-dates";
-import "react-dates/lib/css/_datepicker.css";
 
-const now = moment();
-console.log(now.format("MMM Do, YYYY"));
 
 export default class ExpenseForm extends Component {
   constructor(props) {
@@ -71,7 +68,6 @@ export default class ExpenseForm extends Component {
         <form action="" onSubmit={this.onSubmit}>
           <input
             type="text"
-            id="description"
             placeholder="Description"
             autoFocus
             value={this.state.description}
@@ -92,7 +88,6 @@ export default class ExpenseForm extends Component {
             isOutsideRange={() => false}
           />
           <textarea
-            id="note"
             placeholder="Add a note for your expense"
             value={this.state.note}
             onChange={this.onNoteChange}
